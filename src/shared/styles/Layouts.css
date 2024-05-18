@@ -1,0 +1,7 @@
+#desktop-sider aside {
+    flex: 0 0 0px !important;
+    max-width: 0px !important;
+    min-width: 0px !important;
+    width: 0px !important;
+  }
+

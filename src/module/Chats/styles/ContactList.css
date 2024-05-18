@@ -1,0 +1,10 @@
+#contacts.container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.contact-list.box {
+  width: 20vw;
+  flex: 1;
+  max-height: 60%
+}

@@ -1,0 +1,31 @@
+.contact {
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.contact:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.contact.active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.contact .username-label {
+    font-size: 1vw;
+}
+
+.contact .message-label {
+    font-size: 0.9vw;
+}
+
+.contact .date-time {
+    font-size: 0.8vw;
+    font-weight: bolder;
+}
+
+.contact .user-avatar {
+    text-transform: uppercase;
+    font-weight: 600;
+}
