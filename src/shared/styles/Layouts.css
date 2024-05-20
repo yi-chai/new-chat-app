@@ -1,3 +1,15 @@
+.layout-desktop {
+  height: 100vh
+}
+
+.layout-tablet {
+  width: 100vw;
+}
+
+.layout-mobile {
+  width: 100vw;
+}
+
 .sider-menu {
   height: 80vh;
   display: flex;
@@ -23,6 +35,10 @@
   font-weight: 600;
 }
 
+.sider-profile-button-container {
+  max-width: 83px;
+}
+
 @media screen and (max-width: 1024px) and (orientation: portrait) {
   .sider-menu {
     height: 64px;
@@ -38,7 +54,6 @@
   .sider-profile-button {
     width: auto;
     max-width: auto;
-    cursor: pointer;
   }
 
   .sider-profile-button-avatar {

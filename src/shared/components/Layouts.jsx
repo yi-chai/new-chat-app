@@ -41,9 +41,7 @@ export function DesktopLayout() {
           vertical
           justify="space-between"
           align="start"
-          style={{
-            height: "100vh",
-          }}
+          className="layout-desktop"
         >
           <Sider collapsedWidth="0" width="fit-content">
             <Menu
@@ -64,7 +62,7 @@ export function DesktopLayout() {
             className="sider-profile-button"
           >
             <Avatar size={60} src={userDetails.profileImage}></Avatar>
-            <div style={{ maxWidth: "83px" }}>
+            <div className="sider-profile-button-container">
               <p className="sider-profile-button-text">
                 {userDetails.username}
               </p>
@@ -108,9 +106,7 @@ export function TabletLayout() {
           gap={20}
           justify="space-between"
           align="center"
-          style={{
-            width: "100vw",
-          }}
+          className="layout-tablet"
         >
           <Menu
             onClick={({ key }) => {
@@ -122,14 +118,7 @@ export function TabletLayout() {
             items={menuItems}
             className="sider-menu"
           />
-          <Flex
-            gap={20}
-            onClick={showDrawer}
-            align="center"
-            style={{
-              cursor: "pointer",
-            }}
-          >
+          <Flex gap={20} onClick={showDrawer} align="center">
             <Avatar
               size={50}
               src={userDetails.profileImage}
@@ -155,13 +144,7 @@ export function MobileLayout() {
   return (
     <>
       <Layout>
-        <Flex
-          gap={20}
-          justify="space-between"
-          style={{
-            width: "100vw",
-          }}
-        >
+        <Flex gap={20} justify="space-between" className="layout-mobile">
           <Menu
             onClick={({ key }) => {
               navigate(key);

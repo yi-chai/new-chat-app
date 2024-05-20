@@ -27,7 +27,7 @@ export const collapsedState = atom({
 
 export const groupListState = atom({
   key: "groupListState",
-  default: [],
+  default: [""],
 });
 
 export const chatListState = atom({

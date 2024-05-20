@@ -57,6 +57,18 @@
     flex: 0.45;
 }
 
+.tablet-collapsible {
+    margin: 12px;
+}
+
+.mobile-collapsible {
+    margin: 12px;
+}
+
+.add-new-profile-button {
+    font-size: 14px;
+}
+
 @media screen and (max-width: 1024px) and (orientation: portrait) {
     .top-left-card {
         max-width: 40vw;

@@ -54,7 +54,6 @@ export default function ChatFooter({
           value={message}
           onChange={(e) => {
             setMessage(e.target.value);
-            console.log(message);
           }}
           onPressEnter={(e) => handleMessageBox(e)}
         />

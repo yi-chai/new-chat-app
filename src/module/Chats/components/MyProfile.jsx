@@ -1,7 +1,7 @@
+import "../styles/MyProfile.css";
 import { Drawer, Divider, Avatar, Typography, Flex } from "antd";
-import "../styles/MyProfile.css"
 
-const { Text, Title } = Typography;
+const { Title } = Typography;
 
 export default function MyProfile({ userDetails, onClose, open }) {
   return (

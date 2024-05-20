@@ -57,7 +57,7 @@ export default function ChatLayout() {
               <Title level={3} className="header-title">
                 Chats
               </Title>
-              <Button type="link" style={{ fontSize: "20px" }}>
+              <Button type="link" className="add-new-profile-button">
                 Add New Profile
               </Button>
             </Flex>
@@ -66,7 +66,11 @@ export default function ChatLayout() {
             <Flex gap={15} className="chat-layout-content-cards">
               <Flex gap={15} vertical>
                 <Card className="layout-card top-left-card" bordered={false}>
-                  <ContactList />
+                  <ContactList
+                    userList={userList}
+                    myId={myId}
+                    chatList={chatList}
+                  />
                 </Card>
                 <Card className="layout-card bottom-left-card" bordered={false}>
                   <GroupList />
@@ -113,11 +117,11 @@ export default function ChatLayout() {
             collapsed={collapsed}
             onCollapse={() => setCollapsed(!collapsed)}
             width="30vw"
-            style={{ margin: "12px" }}
+            className="tablet-collapsible"
           >
             <Flex gap={15} vertical>
               <Card className="layout-card top-left-card" bordered={false}>
-                <ContactList />
+                <ContactList chatList={chatList} />
               </Card>
               <Card className="layout-card bottom-left-card" bordered={false}>
                 <GroupList />
@@ -130,7 +134,7 @@ export default function ChatLayout() {
                 <Title level={3} className="header-title">
                   Chats
                 </Title>
-                <Button type="link" style={{ fontSize: "20px" }}>
+                <Button type="link" className="add-new-profile-button">
                   Add New Profile
                 </Button>
               </Flex>
@@ -186,11 +190,11 @@ export default function ChatLayout() {
             collapsedWidth={0}
             collapsed={collapsed}
             width="70vw"
-            style={{ margin: "12px" }}
+            className="mobile-collapsible"
           >
             <Flex gap={15} vertical>
               <Card className="layout-card top-left-card" bordered={false}>
-                <ContactList />
+                <ContactList chatList={chatList} />
               </Card>
               <Card className="layout-card bottom-left-card" bordered={false}>
                 <GroupList />

@@ -1,10 +1,8 @@
 import "../styles/Group.css";
-
-import { Avatar, Flex, Typography } from "antd";
-import getUsers from "../../../api/getUsers";
+import { Avatar, Flex } from "antd";
 import randomColor from "../../../util/common_functions/randomColor";
+import getUsers from "../../../api/getUsers";
 
-const { Text } = Typography;
 const userList = await getUsers();
 
 export default function Group({ profileImage = null, isSelected, ...props }) {

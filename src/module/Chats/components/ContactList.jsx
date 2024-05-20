@@ -1,14 +1,13 @@
 import "../styles/ContactList.css";
-
 import React, { useState, useEffect } from "react";
+import { useRecoilValue } from "recoil";
+import moment from "moment";
 import { Flex, Input, Button } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
 import Contact from "./Contact";
+import { SearchOutlined } from "@ant-design/icons";
 import getUsers from "../../../api/getUsers";
 import getChats from "../../../api/getChats";
-import moment from "moment";
-import { myIdNumberState, collapsedState } from "../global_states/atoms";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { myIdNumberState } from "../global_states/atoms";
 
 const userList = await getUsers();
 const chatList = await getChats();

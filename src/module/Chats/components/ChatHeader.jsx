@@ -2,13 +2,13 @@ import "../styles/ChatHeader.css";
 import React from "react";
 import { useRecoilState } from "recoil";
 import { Avatar, Badge, Space, Flex, Typography, Button } from "antd";
-import randomColor from "../../../util/common_functions/randomColor";
-import { showProfileState, collapsedState } from "../global_states/atoms";
 import {
   PhoneOutlined,
   VideoCameraOutlined,
   MoreOutlined,
 } from "@ant-design/icons";
+import randomColor from "../../../util/common_functions/randomColor";
+import { showProfileState, collapsedState } from "../global_states/atoms";
 
 const { Text } = Typography;
 

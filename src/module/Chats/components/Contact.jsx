@@ -1,5 +1,4 @@
 import "../styles/Contact.css";
-
 import React from "react";
 import { useRecoilState } from "recoil";
 import { Avatar, Badge, Space, Flex, Typography } from "antd";

@@ -10,18 +10,17 @@ import {
   ConfigProvider,
   Divider,
 } from "antd";
+import Group from "./Group";
 import {
   EnvironmentOutlined,
   UserAddOutlined,
   MessageOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import getUserDetails from "../../../api/getUserDetails";
 import getGroups from "../../../api/getGroups";
-import Group from "./Group";
 import getChats from "../../../api/getChats";
 
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 const groupList = await getGroups();
 const chatList = await getChats();
@@ -54,18 +53,21 @@ export default function Profile({ currentId, myId, userList }) {
       <div id="profile-tab" className="profile">
         <Flex vertical align="center" justify="start" className="profile-flex">
           <Card id="profile-tab" className="profile-image-container">
-            <Image
-              className="profile-image"
-              src={userDetails.profileImage}
-            />
+            <Image className="profile-image" src={userDetails.profileImage} />
           </Card>
           <div className="contact-card">
             <Flex vertical justify="center" align="center" gap={10}>
-              <Text strong className="profile-username">{userDetails.username}</Text>
-              <Text type="secondary" className="profile-position">{userDetails.position}</Text>
+              <Text strong className="profile-username">
+                {userDetails.username}
+              </Text>
+              <Text type="secondary" className="profile-position">
+                {userDetails.position}
+              </Text>
               <Space>
                 <EnvironmentOutlined />
-                <Text strong className="profile-address">{userDetails.address}</Text>
+                <Text strong className="profile-address">
+                  {userDetails.address}
+                </Text>
               </Space>
             </Flex>
           </div>
@@ -103,11 +105,7 @@ export default function Profile({ currentId, myId, userList }) {
             </ConfigProvider>
           </Space>
           <Divider></Divider>
-          <Flex
-            className="section-container"
-            vertical
-            align="start"
-          >
+          <Flex className="section-container" vertical align="start">
             <Text strong className="section-header">
               User Information
             </Text>
@@ -125,11 +123,7 @@ export default function Profile({ currentId, myId, userList }) {
             </Text>
           </Flex>
           <Divider />
-          <Flex
-            className="section-container"
-            vertical
-            align="start"
-          >
+          <Flex className="section-container" vertical align="start">
             <Text strong className="section-header">
               Group Participants
             </Text>
@@ -138,11 +132,7 @@ export default function Profile({ currentId, myId, userList }) {
             })}
           </Flex>
           <Divider />
-          <Flex
-            className="section-container"
-            vertical
-            align="start"
-          >
+          <Flex className="section-container" vertical align="start">
             <Text strong className="section-header">
               Media
             </Text>
