@@ -1,10 +1,64 @@
-#contacts.container::-webkit-scrollbar {
+.search-contacts {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 12px;
+  max-width: calc(100% - 24px);
+  height: 50px;
+}
+
+.search-icon {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.4)
+}
+
+.contacts-container {
+  background-color: transparent;
+  min-height: calc(100% - 96px);
+  max-height: calc(100% - 96px);
+  overflow-y: scroll;
+}
+
+.contacts-container::-webkit-scrollbar {
+  -webkit-appearance: none;
   display: none;
 }
 
+.contacts-button-container {
+  padding: 12px
+}
 
-.contact-list.box {
-  width: 20vw;
-  flex: 1;
-  max-height: 60%
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .contacts-container {
+    min-height: calc(50vh - 74px - 64px - 52px);
+    max-height: calc(50vh - 74px - 64px - 52px);
+  }
+
+  .contacts-button-container {
+    display: block;
+  }
+
+  .schedule-button {
+    margin-top: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .contacts-container {
+    min-height: calc(50vh - 74px - 64px - 52px + 62px);
+    max-height: calc(50vh - 74px - 64px - 52px + 62px);
+  }
+  
+  .meeting-button {
+    max-height: 30px;
+    font-size: 13px;
+  }
+
+  .schedule-button {
+    max-height: 30px;
+    margin-top: 0;
+    font-size: 13px;
+  }
+
+  .contacts-button-container {
+    display: flex;
+  }
 }

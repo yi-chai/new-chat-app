@@ -1,9 +1,11 @@
 export const themeConfig = {
   token: {
+    borderRadius: 10,
     colorPrimary: "#5e4ae3",
     colorInfo: "#5e4ae3",
     colorBgBase: "#e9edf1",
     colorBgContainer: "#ffffff",
+    colorBgElevated: "#ffffff",
     colorText: "#000000cc",
     colorTextTertiary: "#00000065",
     colorTextQuaternary: "#0000003f",
@@ -25,14 +27,16 @@ export const themeConfig = {
     lineHeightHeading3: "1.3333333333333333",
     lineHeightHeading4: "1.4",
     lineHeightHeading5: "1.5",
-    borderRadius: 10,
-    colorBgElevated: "#ffffff",
   },
   components: {
     Layout: {
       siderBg: "rgba(0, 0, 0, 0)",
       headerBg: "rgba(0, 0, 0, 0)",
       triggerBg: "rgba(98, 99, 100, 0)",
+      lightTriggerBg: "rgb(233, 237, 241)",
+      triggerBg: "rgb(233, 237, 241)",
+      lightTriggerColor: "white",
+      triggerColor: "white",
     },
     Menu: {
       itemSelectedColor: "rgb(255, 255, 255)",
@@ -43,7 +47,7 @@ export const themeConfig = {
       defaultShadow: "",
       primaryShadow: "",
       defaultBg: "rgb(233, 237, 241)",
-      defaultBorderColor: "rgb(233, 237, 241)",
+      defaultBorderColor: "transparent",
       fontWeight: 600,
       controlHeightLG: 40,
       controlHeightSM: 24,
@@ -69,7 +73,7 @@ export const themeConfig = {
       hoverBg: "rgba(0, 0, 0, 0)",
     },
     Card: {
-      colorBorderSecondary: "rgb(255, 255, 255)",
+      colorBorderSecondary: "rgba(0, 0, 0, 0.15)",
     },
   },
 };

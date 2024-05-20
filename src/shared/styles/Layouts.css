@@ -1,7 +1,65 @@
-#desktop-sider aside {
-    flex: 0 0 0px !important;
-    max-width: 0px !important;
-    min-width: 0px !important;
-    width: 0px !important;
+.sider-menu {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: fit-content;
+  border-radius: 0 0 45px 0;
+}
+
+.sider-profile-button {
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sider-profile-button-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 10px 4px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .sider-menu {
+    height: 64px;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0 0 45px 0;
+    padding: 0 30px;
   }
 
+  .sider-profile-button {
+    width: auto;
+    max-width: auto;
+    cursor: pointer;
+  }
+
+  .sider-profile-button-avatar {
+    margin-right: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .sider-menu {
+    height: 40px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0;
+    padding: 0 0;
+  }
+
+  svg {
+    height: 16px;
+    width: 16px;
+  }
+}

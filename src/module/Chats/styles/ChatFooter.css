@@ -1,0 +1,30 @@
+.skinny-divider {
+    margin: 0
+}
+
+.chat-footer-container {
+    padding: 10px 30px 10px 10px;
+}
+
+.chat-text-area {
+    min-height: 40px !important;
+    max-height: 40px !important;
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    .text-area-small-buttons {
+        display: none;
+    }
+
+    .chat-text-area {
+        font-size: 1.8vh;
+        background-color: "red";
+        min-height: 40px !important;
+        max-height: 40px !important;
+    }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .chat-footer-container {
+        padding: 10px;
+    }}

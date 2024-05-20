@@ -10,8 +10,8 @@ export const idNumberState = atom({
   default: 1,
 });
 
-export const postState = atom({
-  key: "postState",
+export const sendMessageState = atom({
+  key: "sendMessageState",
   default: "",
 });
 
@@ -27,5 +27,10 @@ export const collapsedState = atom({
 
 export const groupListState = atom({
   key: "groupListState",
-  default: [""],
+  default: [],
+});
+
+export const chatListState = atom({
+  key: "chatListState",
+  default: [],
 });

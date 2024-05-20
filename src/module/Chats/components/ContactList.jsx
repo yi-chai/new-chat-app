@@ -1,104 +1,84 @@
-import React, { useState } from "react";
-import { Card, Flex, Input, Button } from "antd";
 import "../styles/ContactList.css";
+
+import React, { useState, useEffect } from "react";
+import { Flex, Input, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import Contact from "./Contact";
 import getUsers from "../../../api/getUsers";
-import getUserChats from "../../../api/getUserChats";
+import getChats from "../../../api/getChats";
 import moment from "moment";
-import { myIdNumberState, idNumberState } from "../global_states/atoms";
+import { myIdNumberState, collapsedState } from "../global_states/atoms";
 import { useRecoilValue, useRecoilState } from "recoil";
 
 const userList = await getUsers();
+const chatList = await getChats();
 
 export default function ContactList() {
   const myId = useRecoilValue(myIdNumberState);
-  const [idNumber, setIdNumber] = useRecoilState(idNumberState);
+  const [search, setSearch] = useState("");
+  const [filteredUserList, setFilteredUserList] = useState([]);
 
-  function handleClick(clickedButton) {
-    setIdNumber(clickedButton);
-    return idNumber;
-  }
+  useEffect(() => {
+    setFilteredUserList(() => {
+      if (search.length === 0) {
+        return userList;
+      } else {
+        return userList.filter((data) => {
+          return data.username
+            .toLowerCase()
+            .match(new RegExp(search.toLowerCase()));
+        });
+      }
+    });
+  }, [search, userList]);
 
   return (
     <>
       <Input
-        prefix={
-          <SearchOutlined
-            style={{ fontSize: "20px", color: "rgba(0, 0, 0, 0.4)" }}
-          />
-        }
+        prefix={<SearchOutlined className="search-icon" />}
+        onChange={(e) => setSearch(e.target.value)}
         size="large"
-        placeholder="Search contacts"
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.1)",
-          margin: "12px",
-          maxWidth: "calc(100% - 24px)",
-          height: "50px",
-        }}
+        placeholder="Search Contact"
+        className="search-contacts"
       />
-      <div
-        style={{
-          backgroundColor: "transparent",
-          minHeight: "calc(100% - 96px)",
-          maxHeight: "calc(100% - 96px)",
-          overflowY: "scroll",
-        }}
-      >
-        {userList
+      <div className="contacts-container">
+        {filteredUserList
           .filter(({ id }) => id !== myId)
           .map(function (data) {
-            const chatList = getUserChats(data.id);
-            console.log(chatList);
+            let userChatList = chatList.filter(
+              ({ fromUser, toUser }) =>
+                fromUser === data.id || toUser === data.id
+            );
+
+            const lastMessage = userChatList[userChatList.length - 1];
+
+            let lastText = JSON.stringify(lastMessage.message);
+
+            if (lastText) {
+              lastText = lastText.replace(/^"(.*)"$/, "$1");
+            }
 
             return (
               <Contact
                 profileImage={data.profileImage}
                 username={data.username}
-                lastMessage={chatList[0].message}
-                date=""
-                time=""
-                onClick={() => {
-                  handleClick(data.id);
-                }}
+                lastMessage={lastText}
+                date={moment(lastMessage?.timestamp).format("MMM DD YYYY")}
+                time={moment(lastMessage?.timestamp).format("LT")}
+                idNumber={data.id}
               />
             );
           })}
-        <Contact
-          username="username"
-          lastMessage="text text text text text"
-          date="7 May 2020"
-          time="3:00 PM"
-          profileImage="https://www.shutterstock.com/shutterstock/photos/1883859943/display_1500/stock-photo-the-word-example-is-written-on-a-magnifying-glass-on-a-yellow-background-1883859943.jpg"
-        />
-        <Contact
-          username="misha"
-          lastMessage="text text text text text"
-          date="7 May 2020"
-          time="3:00 PM"
-          isSelected={true}
-          onClick={() => {
-            handleClick(3);
-          }}
-        />
-        <Contact
-          username="polly"
-          lastMessage="text text text text text"
-          date="7 May 2020"
-          time="3:00 PM"
-        />
-        <Contact
-          username="zane"
-          lastMessage="text text text text text"
-          date="7 May 2020"
-          time="3:00 PM"
-        />
       </div>
-      <Flex style={{ padding: "12px" }} gap="12px" justify="space-around">
-        <Button type="primary" size="large" block>
+      <Flex
+        className="contacts-button-container"
+        gap="12px"
+        justify="space-around"
+      >
+        <Button type="primary" size="large" block className="meeting-button">
           Meeting
         </Button>
-        <Button type="default" size="large" block>
+        <Button type="default" size="large" block className="schedule-button">
           Schedule
         </Button>
       </Flex>

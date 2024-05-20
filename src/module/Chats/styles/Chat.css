@@ -1,0 +1,134 @@
+.chat-box {
+    background-color: transparent;
+    min-height: calc(100% - 23px - 60px);
+    max-height: calc(100% - 23px - 60px);
+    min-width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    padding: 12px 15px 12px 20px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.message {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 80%;
+    margin: 10px 0px;
+}
+
+.message.from-me {
+    flex-direction: row-reverse;
+    align-self: flex-end;
+}
+
+.message.from-them {
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+.chat-avatar {
+    flex-grow: 0;
+    flex-shrink: 0
+}
+
+.bubble {
+    font-weight: 600;
+    text-align: left;
+    padding: 15px 12px;
+    display: inline;
+    white-space: initial;
+    word-break: normal;
+    min-width: 40%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.from-me.bubble {
+    background-color: rgb(94, 74, 227);
+    color: white;
+    border-top-right-radius: 0px;
+}
+
+.from-them.bubble {
+    background-color: white;
+    color: black;
+    border-top-left-radius: 0px;
+}
+
+#chat-image .ant-image {
+    max-width: 60%;
+    border-radius: 20px;
+}
+
+#chat-image .ant-image-img {
+    max-width: 60%;
+    border-radius: 20px;
+}
+
+#chat-image .ant-image-mask {
+    max-width: 60%;
+    border-radius: 20px;
+}
+
+.start-marker-text {
+    margin: 15px 0px
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    .chat-box {
+        min-height: calc(100% - 23px - 60px - 20px);
+        max-height: calc(100% - 23px - 60px - 20px);
+    }
+    .bubble {
+        font-size: 2vw;
+    }
+
+    .message-username {
+        font-size: 1.5vw;
+    }
+
+    .message-timestamp {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .chat-box {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .message {
+        width: 100%;
+
+    }
+    
+    .bubble {
+        font-size: 2.5vw;
+    }
+
+    .message-username {
+        font-size: 2vw;
+    }
+
+    .message-timestamp {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 430px) and (orientation: portrait) {
+    .bubble {
+        font-size: 3.4vw;
+    }
+
+    .message-username {
+        font-size: 2.4vw;
+    }
+
+    .message-timestamp {
+        font-size: 2.4vw;
+    }
+}
+

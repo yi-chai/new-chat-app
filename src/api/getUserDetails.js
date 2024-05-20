@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function getUserDetails(userId) {
+export default function getUserDetails(userId) {
   return axios
     .get(`http://18.143.79.95/api/chatSystem/user/${userId}`)
     .then((res) => {

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function getUsers(idFrom, idTo, postMessage) {
+export default function getUsers(idFrom, idTo, postMessage) {
   return axios
     .post("http://18.143.79.95/api/chatSystem/chat/add", {
       fromUser: idFrom,

@@ -1,7 +1,8 @@
 .contact {
     padding: 12px;
-    width: 100%;
+    max-width: 100%;
     cursor: pointer;
+    user-select: none;
 }
 
 .contact:hover {
@@ -12,20 +13,76 @@
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.contact-text {
+    flex: 1;
+}
+
 .contact .username-label {
     font-size: 1vw;
 }
 
 .contact .message-label {
     font-size: 0.9vw;
+    margin: 6px 0;
+    color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis !important;
+    width: calc(20vw - 38px - 15px - 24px);
 }
 
 .contact .date-time {
     font-size: 0.8vw;
     font-weight: bolder;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis !important;
 }
 
 .contact .user-avatar {
     text-transform: uppercase;
     font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis !important;
+}
+
+.check-icon {
+    color: rgba(94, 74, 227)
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    .contact .username-label {
+        font-size: 1.4vh;
+    }
+    
+    .contact .message-label {
+        font-size: 1.4vh;
+        margin: 0;
+    }
+    
+    .contact .date-time {
+        font-size: 1.1vh;
+    }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .contact {
+        max-width: 70vw;
+    }
+
+    .contact .username-label {
+        font-size: 2vh;
+        width: 30vw;
+    }
+    
+    .contact .message-label {
+        font-size: 1.7vh;
+        width: 30vw;
+    }
+    
+    .contact .date-time {
+        font-size: 1.5vh;
+        width: 30vw;
+    }
 }
