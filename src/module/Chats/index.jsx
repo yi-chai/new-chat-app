@@ -29,15 +29,18 @@ import getUsers from "../../api/getUsers";
 const { Content, Header, Sider } = Layout;
 const { Title } = Typography;
 
-const chatList = await getChats();
-const userList = await getUsers();
-
 export default function ChatLayout() {
   const currentId = useRecoilValue(idNumberState);
   const myId = useRecoilValue(myIdNumberState);
   const [showProfile, setShowProfile] = useRecoilState(showProfileState);
   const [collapsed, setCollapsed] = useRecoilState(collapsedState);
   const [chatList, setChatList] = useState([]);
+  const [userList, setUserList] = useState([]);
+
+  async function getTheUsers() {
+    const loadUsers = await getUsers();
+    setUserList(loadUsers);
+  }
 
   async function getTheChats() {
     const newChats = await getChats();
@@ -46,6 +49,7 @@ export default function ChatLayout() {
 
   useEffect(() => {
     getTheChats();
+    getTheUsers();
   }, []);
 
   return (

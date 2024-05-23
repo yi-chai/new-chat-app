@@ -5,12 +5,10 @@ import { useRecoilValue } from "recoil";
 import moment from "moment";
 import { Card, Flex, Typography, Avatar, Space, Image } from "antd";
 import { idNumberState, myIdNumberState } from "../global_states/atoms";
-import getUsers from "../../../api/getUsers";
 
 const { Text } = Typography;
-const userList = await getUsers();
 
-export default function Chat({ chatList }) {
+export default function Chat({ chatList, userList }) {
   const currentId = useRecoilValue(idNumberState);
   const myId = useRecoilValue(myIdNumberState);
 
@@ -57,14 +55,14 @@ export default function Chat({ chatList }) {
               size="large"
               src={
                 sentByThem
-                  ? myUserDetails.profileImage
-                  : userDetails.profileImage
+                  ? myUserDetails?.profileImage
+                  : userDetails?.profileImage
               }
             ></Avatar>
             <Flex align={sentByThem ? "end" : "start"} vertical gap={10}>
               <Space>
                 <Text strong className="message-username">
-                  {sentByThem ? myUserDetails.username : userDetails.username}
+                  {sentByThem ? myUserDetails?.username : userDetails?.username}
                 </Text>
                 <Text type="secondary" className="message-timestamp">
                   {moment(data.timestamp).calendar()}
@@ -87,7 +85,7 @@ export default function Chat({ chatList }) {
         );
       })}
       <Text type="secondary" className="start-marker-text">
-        This is the beginning of your chat with {userDetails.username}.
+        This is the beginning of your chat with {userDetails?.username}.
       </Text>
     </div>
   );

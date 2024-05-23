@@ -21,11 +21,11 @@ export default function ChatHeader({ currentId, userList, ...props }) {
 
   let imageAvailable = true;
 
-  if (userDetails.profileImage === null || "") {
+  if (userDetails?.profileImage === null || "") {
     imageAvailable = false;
   }
 
-  const userColor = randomColor(userDetails.username.length);
+  const userColor = randomColor(userDetails?.username.length);
 
   return (
     <Flex
@@ -49,8 +49,8 @@ export default function ChatHeader({ currentId, userList, ...props }) {
               size="large"
               icon={
                 <img
-                  src={userDetails.profileImage}
-                  alt={userDetails.username}
+                  src={userDetails?.profileImage}
+                  alt={userDetails?.username}
                 />
               }
             />
@@ -60,16 +60,16 @@ export default function ChatHeader({ currentId, userList, ...props }) {
               size="large"
               style={{ backgroundColor: userColor[0], color: userColor[1] }}
             >
-              {userDetails.username[0]}
+              {userDetails?.username[0]}
             </Avatar>
           )}
         </Badge>
         <Space direction="vertical" size={4}>
           <Text strong className="chat-header-username">
-            {userDetails.username}
+            {userDetails?.username}
           </Text>
           <Text type="secondary" className="chat-header-position">
-            {userDetails.position}
+            {userDetails?.position}
           </Text>
         </Space>
       </Space>

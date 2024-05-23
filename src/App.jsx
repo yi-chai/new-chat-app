@@ -15,14 +15,13 @@ export default function App() {
     <RecoilRoot>
       <ConfigProvider theme={themeConfig}>
         <DesktopBreakpoint>
-        <DesktopLayout />
+          <DesktopLayout />
         </DesktopBreakpoint>
         <TabletBreakpoint>
-        <TabletLayout />
+          <TabletLayout />
         </TabletBreakpoint>
-
         <MobileBreakpoint>
-        <MobileLayout />
+          <MobileLayout />
         </MobileBreakpoint>
       </ConfigProvider>
     </RecoilRoot>
