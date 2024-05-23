@@ -41,8 +41,12 @@
     display: inline;
     white-space: initial;
     word-break: normal;
-    min-width: 40%;
+    min-width: 3vw;
+    max-width: 50vw;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    white-space: wrap;
+    overflow-wrap: break-word;
 }
 
 .from-me.bubble {
