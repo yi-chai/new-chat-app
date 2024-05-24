@@ -3,6 +3,7 @@ import { Layout } from "antd";
 
 import React from "react";
 import ChatLayout from "../../module/Chats";
+import PageNotFound from "../../shared/components/PageNotFound";
 
 const { Content } = Layout;
 
@@ -22,6 +23,7 @@ export default function RoutedContent() {
         <Route path="/comments" element={<Content>Comments</Content>}></Route>
         <Route path="/settings" element={<Content>Settings</Content>}></Route>
         <Route path="/profile" element={<Content>Profile</Content>}></Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
   );
