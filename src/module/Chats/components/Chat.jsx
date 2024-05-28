@@ -12,11 +12,11 @@ export default function Chat({ chatList, userList }) {
   const currentId = useRecoilValue(idNumberState);
   const myId = useRecoilValue(myIdNumberState);
 
-  const userDetails = userList.filter(function (user) {
+  const userDetails = userList?.filter(function (user) {
     return user.id === currentId;
   })[0];
 
-  const myUserDetails = userList.filter(function (user) {
+  const myUserDetails = userList?.filter(function (user) {
     return user.id === myId;
   })[0];
 
@@ -30,9 +30,9 @@ export default function Chat({ chatList, userList }) {
   }
 
   const myMessages = chatList
-    .filter(({ fromUser, toUser }) => fromUser === myId || toUser === myId)
+    ?.filter(({ fromUser, toUser }) => fromUser === myId || toUser === myId)
     .reverse()
-    .filter(
+    ?.filter(
       ({ fromUser, toUser }) => fromUser === currentId || toUser === currentId
     );
 

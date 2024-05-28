@@ -42,9 +42,9 @@ export default function ContactList() {
       />
       <div className="contacts-container">
         {filteredUserList
-          .filter(({ id }) => id !== myId)
+          ?.filter(({ id }) => id !== myId)
           .map(function (data) {
-            let userChatList = chatList.filter(
+            let userChatList = chatList?.filter(
               ({ fromUser, toUser }) =>
                 fromUser === data.id || toUser === data.id
             );

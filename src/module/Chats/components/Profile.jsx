@@ -26,16 +26,18 @@ const groupList = await getGroups();
 const chatList = await getChats();
 
 export default function Profile({ currentId, myId, userList }) {
-  const userDetails = userList.filter(function (user) {
+  const userDetails = userList?.filter(function (user) {
     return user.id === currentId;
   })[0];
 
-  const userGroups = groupList.filter(({ users }) => users.includes(currentId));
+  const userGroups = groupList?.filter(({ users }) =>
+    users.includes(currentId)
+  );
 
   const myMessages = chatList
-    .filter(({ fromUser, toUser }) => fromUser === myId || toUser === myId)
+    ?.filter(({ fromUser, toUser }) => fromUser === myId || toUser === myId)
     .reverse()
-    .filter(
+    ?.filter(
       ({ fromUser, toUser }) => fromUser === currentId || toUser === currentId
     );
 

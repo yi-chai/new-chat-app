@@ -15,7 +15,7 @@ const { Text } = Typography;
 export default function ChatHeader({ currentId, userList, ...props }) {
   const [collapsed, setCollapsed] = useRecoilState(collapsedState);
   const [showProfile, setShowProfile] = useRecoilState(showProfileState);
-  const userDetails = userList.filter(function (user) {
+  const userDetails = userList?.filter(function (user) {
     return user.id === currentId;
   })[0];
 

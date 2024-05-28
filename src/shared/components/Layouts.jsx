@@ -21,7 +21,7 @@ export function DesktopLayout() {
   const menuItems = DESKTOP_MENU_ITEMS;
   const myId = useRecoilValue(myIdNumberState);
 
-  const userDetails = userList.filter(function (user) {
+  const userDetails = userList?.filter(function (user) {
     return user.id === myId;
   })[0];
 
@@ -87,7 +87,7 @@ export function TabletLayout() {
   const menuItems = DESKTOP_MENU_ITEMS;
   const myId = useRecoilValue(myIdNumberState);
 
-  const userDetails = userList.filter(function (user) {
+  const userDetails = userList?.filter(function (user) {
     return user.id === myId;
   })[0];
 
