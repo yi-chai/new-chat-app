@@ -96,7 +96,7 @@ export default function ChatLayout() {
                   userList={userList}
                   myId={myId}
                   getTheChats={getTheChats}
-                ></ChatFooter>
+                 />
               </Card>
               {showProfile ? (
                 <Card className="layout-card right-card" bordered={false}>
@@ -104,7 +104,7 @@ export default function ChatLayout() {
                     currentId={currentId}
                     myId={myId}
                     userList={userList}
-                  ></Profile>
+                   />
                 </Card>
               ) : (
                 <></>
@@ -163,7 +163,7 @@ export default function ChatLayout() {
                     userList={userList}
                     myId={myId}
                     getTheChats={getTheChats}
-                  ></ChatFooter>
+                   />
                 </Card>
                 {showProfile ? (
                   <Card className="layout-card right-card" bordered={false}>
@@ -171,7 +171,7 @@ export default function ChatLayout() {
                       currentId={currentId}
                       myId={myId}
                       userList={userList}
-                    ></Profile>
+                     />
                   </Card>
                 ) : (
                   <></>
@@ -239,7 +239,7 @@ export default function ChatLayout() {
                       currentId={currentId}
                       myId={myId}
                       userList={userList}
-                    ></Profile>
+                     />
                   </Card>
                 ) : (
                   <></>

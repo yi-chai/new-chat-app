@@ -38,7 +38,7 @@ export default function Group({ profileImage = null, isSelected, ...props }) {
             className="user-group"
           >
             {groupUsers.map(function (data) {
-              return <Avatar src={userList[data - 1]?.profileImage}></Avatar>;
+              return <Avatar src={userList[data - 1]?.profileImage} />;
             })}
           </Avatar.Group>
         </Flex>

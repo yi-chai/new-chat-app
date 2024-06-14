@@ -106,7 +106,7 @@ export default function Profile({ currentId, myId, userList }) {
               />
             </ConfigProvider>
           </Space>
-          <Divider></Divider>
+          <Divider />
           <Flex className="section-container" vertical align="start">
             <Text strong className="section-header">
               User Information
