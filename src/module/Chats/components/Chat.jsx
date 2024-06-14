@@ -58,7 +58,7 @@ export default function Chat({ chatList, userList }) {
                   ? myUserDetails?.profileImage
                   : userDetails?.profileImage
               }
-            ></Avatar>
+             />
             <Flex align={sentByThem ? "end" : "start"} vertical gap={10}>
               <Space>
                 <Text strong className="message-username">

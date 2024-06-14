@@ -61,7 +61,7 @@ export function DesktopLayout() {
             align="center"
             className="sider-profile-button"
           >
-            <Avatar size={60} src={userDetails.profileImage}></Avatar>
+            <Avatar size={60} src={userDetails.profileImage} />
             <div className="sider-profile-button-container">
               <p className="sider-profile-button-text">
                 {userDetails.username}
@@ -74,7 +74,7 @@ export function DesktopLayout() {
           userDetails={userDetails}
           onClose={onClose}
           open={open}
-        ></MyProfile>
+         />
       </Layout>
     </>
   );
@@ -123,7 +123,7 @@ export function TabletLayout() {
               size={50}
               src={userDetails.profileImage}
               className="sider-profile-button-avatar"
-            ></Avatar>
+             />
           </Flex>
         </Flex>
         <RoutedContent />
@@ -131,7 +131,7 @@ export function TabletLayout() {
           userDetails={userDetails}
           onClose={onClose}
           open={open}
-        ></MyProfile>
+         />
       </Layout>
     </>
   );
@@ -154,7 +154,7 @@ export function MobileLayout() {
             mode="horizontal"
             items={menuItems}
             className="sider-menu"
-          ></Menu>
+           />
         </Flex>
         <RoutedContent />
       </Layout>
